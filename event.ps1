@@ -42,7 +42,7 @@ foreach($event in $eventlist){
 
     foreach($line in $detail){
         #セキュリティIDからアカウント名を取得
-        if($line -match "Security ID:"){
+        if($line -match "セキュリティ ID:"){
             $tmp = $line.split(":")
             $tmp_secid = $tmp[1].trim()
 
@@ -61,7 +61,7 @@ foreach($event in $eventlist){
         }
 
         #イベントログにおけるアカウント名
-        if($line -match "Account Name:"){
+        if($line -match "アカウント名:"){
             $tmp = $line.split(":")
             $tmp_account = $tmp[1].trim()
 
@@ -71,7 +71,7 @@ foreach($event in $eventlist){
         }
 
         #ログオンID
-        if($line -match "Logon ID:"){
+        if($line -match "ログオン ID:"){
             $tmp = $line.split(":")
             $tmp_logonid = $tmp[1].trim()
 
@@ -81,7 +81,7 @@ foreach($event in $eventlist){
         }
 
 		#アクセス元IPアドレス
-        if($line -match "Source Network Address:"){
+        if($line -match "ソース ネットワーク アドレス:"){
             $tmp = $line.split(":")
             $src = $tmp[1].trim()
         }
